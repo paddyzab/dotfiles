@@ -1,0 +1,40 @@
+[user]
+	name = Patryk Zabicki
+	email = patryk.zabicki@gmail.com
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+
+	fl = log -u
+
+	dlc = diff --cached HEAD^
+
+	lt = describe --tags --abbrev=0
+
+	cp = cherry-pick
+	st = status -s
+	cl = clone
+	ci = commit
+	co = checkout
+	br = branch 
+	diff = diff --word-diff
+	dc = diff --cached
+
+	r = reset
+	r1 = reset HEAD^
+	r2 = reset HEAD^^
+	rh = reset --hard
+	rh1 = reset HEAD^ --hard
+	rh2 = reset HEAD^^ --hard
+	
+	yolo = git commit -am "DEAL WITH IT" && git push -f origin master		
+[core]
+	excludesfile = /home/paddy/.gitignore_global
+	autocrlf = input

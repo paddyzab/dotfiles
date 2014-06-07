@@ -1,0 +1,6 @@
+alias idea='/home/paddy/idea/bin/idea.sh'
+alias netre='sudo /etc/init.d/networking restart'
+alias volu='amixer -D pulse sset Master 3%+'
+alias vold='amixer -D pulse sset Master 3%-'
+alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "percentage|time to empty"'
+alias subl='/usr/local/bin/subl/sublime_text'
