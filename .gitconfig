@@ -33,8 +33,11 @@
 	rh = reset --hard
 	rh1 = reset HEAD^ --hard
 	rh2 = reset HEAD^^ --hard
-	
+	add = add --all
 	yolo = git commit -am "DEAL WITH IT" && git push -f origin master		
 [core]
 	excludesfile = /home/paddy/.gitignore_global
 	autocrlf = input
+        push = simple
+[push]
+	default = simple
