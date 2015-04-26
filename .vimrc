@@ -22,4 +22,13 @@ Bundle 'gmarik/vundle'
 " solarised theme
 Bundle 'altercation/vim-colors-solarized'
 
+" vim go plugin
+Plugin 'fatih/vim-go'
+
+" slime 
+Plugin 'vim-scripts/slimv.vim'
+
+" arduino plugin
+Plugin 'sudar/vim-arduino-syntax'
+
 filetype plugin indent on " Required
