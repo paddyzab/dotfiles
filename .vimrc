@@ -58,14 +58,17 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
+" enable AutoSave on Vim startup
+let g:auto_save = 1  
+
+" do not save while in insert mode
+let g:auto_save_in_insert_mode = 0  
+
 set rtp+=~/.vim/vundle.vim/
 call vundle#rc()
 
 " vundle
 Bundle 'gmarik/vundle'
-
-" solarised theme
-Bundle 'altercation/vim-colors-solarized'
 
 " vim go plugin
 Plugin 'fatih/vim-go'
@@ -78,8 +81,12 @@ Plugin 'sudar/vim-arduino-syntax'
 
 " nerdtree
 Plugin 'scrooloose/nerdtree'
+
 " rust
 Plugin 'rust-lang/rust.vim'
+
+" vim-auto-save
+Plugin 'vim-scripts/vim-auto-save'
 
 filetype plugin indent on " Required
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
