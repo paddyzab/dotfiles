@@ -76,9 +76,6 @@ Plugin 'fatih/vim-go'
 " slime 
 Plugin 'vim-scripts/slimv.vim'
 
-" arduino plugin
-Plugin 'sudar/vim-arduino-syntax'
-
 " nerdtree
 Plugin 'scrooloose/nerdtree'
 
@@ -87,6 +84,9 @@ Plugin 'rust-lang/rust.vim'
 
 " vim-auto-save
 Plugin 'vim-scripts/vim-auto-save'
+
+" vim-arduino
+Plugin 'tclem/vim-arduino'
 
 filetype plugin indent on " Required
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
