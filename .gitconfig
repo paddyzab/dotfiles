@@ -37,6 +37,7 @@
 	ammend = commit --ammend
 	swear = "!GREP_COLOR='01;31';git log --full-history --pretty=format:'%h - %C(green)%an%C(reset) - %C(yellow)%s' | grep -E 'fuck|suck|shit|damn| ass ' --color"
 	yolo = git commit -am "DEAL WITH IT" && git push -f origin master		
+	wdiff = git diff --word-diff
 [core]
 	excludesfile = /home/paddy/.gitignore_global
 	autocrlf = input
