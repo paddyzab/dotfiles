@@ -63,30 +63,10 @@ let g:auto_save = 1
 
 " do not save while in insert mode
 let g:auto_save_in_insert_mode = 0  
+source ~/.vim/.vundleconf.vim
 
-set rtp+=~/.vim/vundle.vim/
-call vundle#rc()
-
-" vundle
-Bundle 'gmarik/vundle'
-
-" vim go plugin
-Plugin 'fatih/vim-go'
-
-" slime 
-Plugin 'vim-scripts/slimv.vim'
-
-" nerdtree
-Plugin 'scrooloose/nerdtree'
-
-" rust
-Plugin 'rust-lang/rust.vim'
-
-" vim-auto-save
-Plugin 'vim-scripts/vim-auto-save'
-
-" vim-arduino
-Plugin 'tclem/vim-arduino'
+" neocomplete enabled by default
+let g:neocomplete#enable_at_startup = 1
 
 filetype plugin indent on " Required
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()

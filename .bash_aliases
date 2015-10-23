@@ -1,6 +1,5 @@
 #niveresal aliases
 alias idea='/home/paddy/idea/bin/idea.sh'
-alias studio='studio.sh'
 alias netre='sudo /etc/init.d/networking restart'
 alias volu='amixer -D pulse sset Master 3%+'
 alias vold='amixer -D pulse sset Master 3%-'
@@ -9,6 +8,7 @@ alias subl='/usr/local/bin/subl/sublime_text'
 alias apt-get='sudo apt-get'
 alias c='clear'
 alias ls='ls --color=auto'
+alias lsa='ls -la --colo=auto'
 alias l.='ls -d .* --color=auto'
 alias ..='cd ..'
 alias cd..='cd ..'
@@ -38,5 +38,5 @@ function find() { ack-grep $1; }
 alias nexus4='player -vm-name 85c03d42-318f-4deb-a71e-dd65f5919e96'
 alias nexus10='player -vm-name 18be9eaf-aa94-45da-ba8d-274f8e75d3b8'
 
-#gradle aliases
-alias gradle='gw'
+#games
+alias pillars='/usr/local/games/pillars/start.sh'
