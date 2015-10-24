@@ -1,4 +1,4 @@
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
  
 " vundle
@@ -34,5 +34,6 @@ Plugin 'Shougo/neosnippet'
 "snippets repository
 Plugin 'Shougo/neosnippet-snippets'
 
-
+filetype plugin indent on 
 call vundle#end()
+
