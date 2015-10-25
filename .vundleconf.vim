@@ -34,6 +34,12 @@ Plugin 'Shougo/neosnippet'
 "snippets repository
 Plugin 'Shougo/neosnippet-snippets'
 
+" Full path fuzzy finder
+Plugin 'kien/ctrlp.vim'
+
+" Gundo for visualising vim undo tree
+Plugin 'sjl/gundo.vim'
+
 filetype plugin indent on 
 call vundle#end()
 

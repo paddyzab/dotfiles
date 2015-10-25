@@ -3,6 +3,20 @@ set nocompatible
 filetype off 
 source ~/.vim/.vundleconf.vim " Load Vundle configuration
 " }}}
+" Leader Config {{{
+let mapleader=","
+nnoremap <leader>m :silent make\|redraw!\|cw<CR>
+nnoremap <leader>w :NERDTreeToggle<CR>
+nnoremap <leader>f za
+nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>h :A<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
+inoremap jk <esc>
+nnoremap <leader>r :call RunTestFile()<CR>
+nnoremap <leader>g :call RunGoFile()<CR>
+nnoremap <space> :
+" }}}
 " Backup Settings {{{
 set nobackup
 set nowb
@@ -12,6 +26,11 @@ set noswapfile
 set tabstop=4     " number of visual spaces per TAB
 set softtabstop=4 " number of spaces in tab when editing 
 set expandtab     " tabs are spaces
+set shiftwidth=4
+set modelines=1
+filetype indent on
+filetype plugin on
+set autoindent
 " }}}
 " UI Layout {{{
 set cmdheight=2   " Height of the command bar
@@ -35,7 +54,6 @@ set incsearch     " Makes search act like search in modern browsers
 set foldenable        " enable folding
 set foldlevelstart=10 " open most folds by default
 set foldnestmax=10    " 10 nested fold max
-nnoremap <space> za 
 set foldmethod=indent " fold based on indent level
 " }}}
 " Colors and Fonts {{{
@@ -50,8 +68,14 @@ set laststatus=2              " Always show the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 set ffs=unix,dos,mac          " Use Unix as the standard file type
 " }}}
+" CtrlP {{{
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+" }}}
 " NERDTree settings {{{
-map <C-n> :NERDTreeToggle<CR>
 autocmd vimenter * NERDTree   " automatically open NERDTree in start
 " }}}
 " Helper functions {{{
@@ -134,3 +158,5 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 " }}}
+
+" vim:foldmethod=marker:foldlevel=0
