@@ -77,86 +77,97 @@ let g:ctrlp_working_path_mode = 0
 " }}}
 " NERDTree settings {{{
 autocmd vimenter * NERDTree   " automatically open NERDTree in start
+let g:NERDTreeWinSize = 40
+let g:NERDTreeWinPos = "right"
+let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=1
+" }}}
+" Vim-GO {{{
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 " }}}
 " Helper functions {{{
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-   \   exe "normal! g`\"" |
-   \ endif
-set viminfo^=%                     " Remember info about open buffers on close
-let g:auto_save = 1                " Enable AutoSave on Vim startup
-let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
+   autocmd BufReadPost *
+         \ if line("'\"") > 0 && line("'\"") <= line("$") |
+       \   exe "normal! g`\"" |
+       \ endif
+    set viminfo^=%                     " Remember info about open buffers on close
+    let g:auto_save = 1                " Enable AutoSave on Vim startup
+    let g:auto_save_in_insert_mode = 0 " do not save while in insert mode
 
-filetype plugin indent on " Required
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+    filetype plugin indent on " Required
+    autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
- function! CmdLine(str)
-     exe "menu Foo.Bar :" . a:str
-         emenu Foo.Bar
-             unmenu Foo
-             endfunction
+     function! CmdLine(str)
+         exe "menu Foo.Bar :" . a:str
+             emenu Foo.Bar
+                 unmenu Foo
+                 endfunction
 
-function! VisualSelection(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
+    function! VisualSelection(direction) range
+        let l:saved_reg = @"
+        execute "normal! vgvy"
 
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
+        let l:pattern = escape(@", '\\/.*$^~[]')
+        let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
+        if a:direction == 'b'
+            execute "normal ?" . l:pattern . "^M"
+        elseif a:direction == 'gv'
+            call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+        elseif a:direction == 'replace'
+            call CmdLine("%s" . '/'. l:pattern . '/')
+        elseif a:direction == 'f'
+            execute "normal /" . l:pattern . "^M"
+        endif
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
+        let @/ = l:pattern
+        let @" = l:saved_reg
+    endfunction
 
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
-endfunction
+    " Returns true if paste mode is enabled
+    function! HasPaste()
+        if &paste
+            return 'PASTE MODE  '
+        en
+        return ''
+    endfunction
 
-" Don't close window, when deleting a buffer
-command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
-   let l:currentBufNum = bufnr("%")
-   let l:alternateBufNum = bufnr("#")
+    " Don't close window, when deleting a buffer
+    command! Bclose call <SID>BufcloseCloseIt()
+    function! <SID>BufcloseCloseIt()
+       let l:currentBufNum = bufnr("%")
+       let l:alternateBufNum = bufnr("#")
 
-   if buflisted(l:alternateBufNum)
-     buffer #
-   else
-     bnext
-   endif
+       if buflisted(l:alternateBufNum)
+         buffer #
+       else
+         bnext
+       endif
 
-   if bufnr("%") == l:currentBufNum
-     new
-   endif
+       if bufnr("%") == l:currentBufNum
+         new
+       endif
 
-   if buflisted(l:currentBufNum)
-     execute("bdelete! ".l:currentBufNum)
-   endif
-endfunction
+       if buflisted(l:currentBufNum)
+         execute("bdelete! ".l:currentBufNum)
+       endif
+    endfunction
 
-" Close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
+    " Close all open buffers on entering a window if the only
+    " buffer that's left is the NERDTree buffer
+    function! s:CloseIfOnlyNerdTreeLeft()
+      if exists("t:NERDTreeBufName")
+        if bufwinnr(t:NERDTreeBufName) != -1
+          if winnr("$") == 1
+            q
+          endif
+        endif
       endif
-    endif
-  endif
-endfunction
-" }}}
+    endfunction
+    " }}}
 
 " vim:foldmethod=marker:foldlevel=0

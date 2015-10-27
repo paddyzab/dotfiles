@@ -51,5 +51,9 @@
     algorithm = patience
 [push]
 	default = simple
+[fetch]
+    prune = true
+[rebase]
+    autostash = true
 [help]
 	autocorrect = 1
