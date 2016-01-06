@@ -219,5 +219,5 @@ else \
   echo " '$ColorOff\$' "; \
 fi)'
 
-source ~/.git-completion.sh
-source ~/.git-prompt.sh
+source ~/.git-completion
+source ~/.git-prompt
