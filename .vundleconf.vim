@@ -40,6 +40,14 @@ Plugin 'kien/ctrlp.vim'
 " Gundo for visualising vim undo tree
 Plugin 'sjl/gundo.vim'
 
+" Vim-Fugitive
+Plugin 'tpope/vim-fugitive'
+
+" Vim-Surround
+Plugin 'tpope/vim-surround'
+
+" Vim-Powerline
+Plugin 'powerline/powerline'
+
 filetype plugin indent on 
 call vundle#end()
-

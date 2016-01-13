@@ -82,6 +82,12 @@ let g:NERDTreeWinPos = "right"
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 " }}}
+" Powerline settings {{{
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set laststatus=2
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
+" }}}
 " Vim-GO {{{
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
