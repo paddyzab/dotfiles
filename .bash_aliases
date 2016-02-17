@@ -1,5 +1,4 @@
 #niveresal aliases
-<<<<<<< HEAD
 alias idea='/home/paddy/idea/bin/idea.sh'
 alias studio='/usr/local/android-studio/bin/studio.sh'
 alias subl='/usr/local/sublime/sublime_text'
@@ -32,6 +31,3 @@ alias vlc='vlc *.avi'
 
 #projects
 alias projects='cd ~/projects'
-
-#functions
-function find() { ack-grep $1; }
