@@ -25,6 +25,9 @@ Plugin 'tclem/vim-arduino'
 " autocomplete
 Plugin 'Shougo/neocomplete.vim'
 
+" tagbar
+Plugin 'majutsushi/tagbar'
+
 " print documents in echo area
 Plugin 'Shougo/echodoc.vim'
 
