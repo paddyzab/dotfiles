@@ -1,15 +1,15 @@
 #niveresal aliases
-alias studio='/usr/local/android-studio/bin/studio.sh'
-alias subl='/usr/local/sublime/sublime_text'
+alias idea='/home/paddy/idea/bin/idea.sh'
 alias netre='sudo /etc/init.d/networking restart'
 alias volu='amixer -D pulse sset Master 3%+'
 alias vold='amixer -D pulse sset Master 3%-'
 alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "percentage|time to empty"'
+alias subl='/usr/local/bin/subl/sublime_text'
 alias apt-get='sudo apt-get'
 alias c='clear'
-alias ls='ls --color=auto'
-alias lsa='ls -la --colo=auto'
-alias l.='ls -d .* --color=auto'
+alias ls='ls -AG'
+alias lsa='ls -laAG'
+alias l.='ls -dAG .*'
 alias ..='cd ..'
 alias cd..='cd ..'
 alias grep='grep --color=auto'
@@ -21,7 +21,10 @@ alias mount='mount |column -t'
 alias h='history'
 alias now='date +"%T"'
 alias nowdate='date +"%d-%m-%Y"'
-alias zuriWttr='curl http://wttr\.in/zurich'
+
+#android
+alias wfDown='adb shell svc wifi disable'
+alias wfUp='adb shell svc wifi enable'
 
 #desktop specific
 alias vlc='vlc *.avi'
@@ -35,9 +38,6 @@ alias cusp='cd ~/projects/cuespton'
 #functions
 function find() { ack-grep $1; }
 
-#genymotion emulators
-alias nexus4='player -vm-name 85c03d42-318f-4deb-a71e-dd65f5919e96'
-alias nexus10='player -vm-name 18be9eaf-aa94-45da-ba8d-274f8e75d3b8'
-
-#games
-alias pillars='/usr/local/games/pillars/start.sh'
+# CW specifics
+alias gcl='./gradlew clean'
+alias gid='./gradlew installItsDebug'
