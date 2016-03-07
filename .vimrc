@@ -1,14 +1,33 @@
 " Launch Config {{{
 set nocompatible
-filetype off 
+filetype off
 source ~/.vim/.vundleconf.vim " Load Vundle configuration
 " }}}
 " Leader Config {{{
 let mapleader=","
+
+" reopen previously opened file
+nnoremap <Leader><Leader> :e#<CR>
+
+" reload VIM config
+map <leader>s :source ~/.vimrc<CR>
+
+" redraw the current vim window
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
+
+" open Tree
 nnoremap <leader>w :NERDTreeToggle<CR>
+
+" Locate current file in Tree
+nmap <leader>j :NERDTreeFind<CR>
+
+" open fold
 nnoremap <leader>f za
+
+" open Gundo
 nnoremap <leader>u :GundoToggle<CR>
+
+" Toggle autosave
 nnoremap <leader>h :A<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
@@ -23,10 +42,10 @@ set nowb
 set noswapfile
 " }}}
 " Tabs Settings {{{
-set tabstop=4     " number of visual spaces per TAB
-set softtabstop=4 " number of spaces in tab when editing 
+set tabstop=2     " number of visual spaces per TAB
+set softtabstop=4 " number of spaces in tab when editing
 set expandtab     " tabs are spaces
-set shiftwidth=4
+set shiftwidth=2
 set modelines=1
 filetype indent on
 filetype plugin on
@@ -44,6 +63,7 @@ syntax enable     " Use syntax highlighting
 set ai            " Auto indent
 set si            " Smart indent
 set wrap          " Wrap lines
+set colorcolumn=90
 " }}}
 " Search {{{
 set hlsearch      " Highlight search results
@@ -57,9 +77,11 @@ set foldnestmax=10    " 10 nested fold max
 set foldmethod=indent " fold based on indent level
 " }}}
 " Colors and Fonts {{{
-colorscheme badwolf
+" Use 256 colours
+set t_Co=256
 set background=dark
 set encoding=utf8             " Set utf8 as standard encoding and en_US as the standard language
+colorscheme badwolf
 let g:badwolf_darkgutter = 1  " Make the gutters darker than the background.
 let g:badwolf_tabline = 0     " Make the tab line darker than the background.
 " }}}
@@ -78,15 +100,16 @@ let g:ctrlp_working_path_mode = 0
 " NERDTree settings {{{
 autocmd vimenter * NERDTree   " automatically open NERDTree in start
 let g:NERDTreeWinSize = 40
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
 " }}}
 " Powerline settings {{{
 set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=256
 " }}}
 " Vim-GO {{{
 let g:go_highlight_functions = 1
@@ -98,6 +121,8 @@ let g:go_highlight_build_constraints = 1
 " Code {{{
 let g:neocomplete#enable_at_startup = 1
 nnoremap <leader>l :TagbarToggle<CR>
+" remove white spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
 " }}}
 " Helper functions {{{
    autocmd BufReadPost *
