@@ -1,21 +1,21 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
- 
+
 " vundle
 Plugin 'gmarik/vundle'
- 
+
 " vim go plugin
 Plugin 'fatih/vim-go'
 
-" slime 
+" slime
 Plugin 'vim-scripts/slimv.vim'
 
 " nerdtree
 Plugin 'scrooloose/nerdtree'
- 
+
 " rust
 Plugin 'rust-lang/rust.vim'
- 
+
 " vim-auto-save
 Plugin 'vim-scripts/vim-auto-save'
 
@@ -52,5 +52,20 @@ Plugin 'tpope/vim-surround'
 " Vim-Powerline
 Plugin 'powerline/powerline'
 
-filetype plugin indent on 
+" Vim fireplace
+Plugin 'tpope/vim-fireplace'
+
+" Im-sexp-mappings-for-regular-people
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+
+" Vim salve
+Plugin 'tpope/vim-salve'
+
+" Rainbow
+Plugin 'luochen1990/rainbow'
+
+" Gutter - shows diff in the gutter
+Plugin 'airblade/vim-gitgutter'
+
+filetype plugin indent on
 call vundle#end()
