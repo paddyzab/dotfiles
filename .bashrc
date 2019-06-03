@@ -103,6 +103,14 @@ if [ -f ~/.ps1 ]; then
     . ~/.ps1
 fi
 
+if [ -f ~/.git-completion ]; then
+    . ~/.git-completion
+fi
+
+if [ -f ~/.git-prompt ]; then
+    . ~/.git-prompt
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
