@@ -19,9 +19,6 @@ Plugin 'rust-lang/rust.vim'
 " vim-auto-save
 Plugin 'vim-scripts/vim-auto-save'
 
-" vim-arduino
-Plugin 'tclem/vim-arduino'
-
 " autocomplete
 Plugin 'Shougo/neocomplete.vim'
 
@@ -52,20 +49,17 @@ Plugin 'tpope/vim-surround'
 " Vim-Powerline
 Plugin 'powerline/powerline'
 
-" Vim fireplace
-Plugin 'tpope/vim-fireplace'
-
 " Im-sexp-mappings-for-regular-people
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-
-" Vim salve
-Plugin 'tpope/vim-salve'
 
 " Rainbow
 Plugin 'luochen1990/rainbow'
 
 " Gutter - shows diff in the gutter
 Plugin 'airblade/vim-gitgutter'
+
+" Vim syntax file for Docker's Dockerfile and snippets for snipMate.
+Plugin 'ekalinin/Dockerfile.vim'
 
 filetype plugin indent on
 call vundle#end()
