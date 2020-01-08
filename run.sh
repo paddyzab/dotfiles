@@ -9,3 +9,6 @@ cp .ps1 $HOME/.ps1
 cp .ps1-constants $HOME/.ps1-constants
 cp .vimrc $HOME/.vimrc
 cp -R .vim $HOME/.vim
+
+# clone the vundle into home directory
+ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
