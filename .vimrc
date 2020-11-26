@@ -1,4 +1,5 @@
 " Launch Config {{{
+set spell spelllang=en_US
 set nocompatible
 filetype off
 source ~/.vim/.vundleconf.vim " Load Vundle configuration
