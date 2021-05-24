@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/patryk/.oh-my-zsh"
+export ZSH="/Users/11pzabicki/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 DISABLE_UPDATE_PROMPT="true"
 
@@ -27,7 +27,7 @@ DISABLE_UPDATE_PROMPT="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git adb cargo bazel colorize colored-man-pages flutter github golang gradle heroku httpie)
+plugins=(git git-prompt adb cargo bazel colorize colored-man-pages flutter github golang gradle heroku httpie)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bash_aliases
@@ -52,3 +52,7 @@ source $HOME/.bash_aliases
 # Example aliases
 # alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="vim ~/.oh-my-zsh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/11pzabicki/.sdkman"
+[[ -s "/Users/11pzabicki/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/11pzabicki/.sdkman/bin/sdkman-init.sh"
