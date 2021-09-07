@@ -4,3 +4,4 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HO
 export ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+. "$HOME/.cargo/env"
