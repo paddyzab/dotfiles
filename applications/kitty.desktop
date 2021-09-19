@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Kitty Terminal
+Comment=opens kitty terminal
+Type=Application
+Exec=/home/paddy/.local/kitty.app/bin/kitty %U
+Icon=/home/paddy/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png
+Terminal=false (or true)
+Categories=Programming;
+
